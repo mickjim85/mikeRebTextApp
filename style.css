@@ -15,14 +15,14 @@
 body {
     text-align: center;
     margin: 0;
-    background-image: url(/images/bckground.png);
+    background-image: url(images/bckground.png);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
 .card {
-    width: 300px;
+    width: 400px;
     margin: 30px auto 0;
 }
 

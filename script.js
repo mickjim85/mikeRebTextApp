@@ -61,5 +61,6 @@ let imageRender = document.getElementById("image-to-display");
 let randomNumber = Math.floor(Math.random() * 11 + 1);
 
 imageRender.innerHTML = `
-                <img class="image" src="/images/us/${randomNumber}.jpg" alt="picture of Michael and Rebecca"/>
+                <img class="image" src="images/us/${randomNumber}.jpg" 
+                alt="picture of Michael and Rebecca"/>
                 `
