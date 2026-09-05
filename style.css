@@ -1,0 +1,157 @@
+/*  blue: 007DCC 
+    yellow: FB900
+    red: D10056
+    maroon: B2054C
+*/
+
+*   {
+    font-family: "Caacupe One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    text-align: center;
+    margin: 0;
+    background-image: url(/images/bckground.png);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.card {
+    width: 300px;
+    margin: 30px auto 0;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    line-height: 50px;
+}
+
+header {
+    margin-bottom: 10px;
+}
+
+main {
+    margin: 0 20px
+}
+
+.image {
+    width: 80%;
+    border: 5px solid #FB9000;
+    border-radius: 10%;
+    max-height: 350px;
+}
+
+
+footer {
+    margin-top: auto;
+    align-items: flex-end;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #E7E7E7;
+    padding: 10px 5px;
+}
+
+h1 {
+    font-size: 68px;
+    color: black;
+}
+
+#Michael {
+    color: #007DCC;
+}
+
+#Rebecca {
+    color: #D10056;
+}
+
+.input-box {
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 10px auto 15px;
+    width: 80%;
+}
+
+#input-box {
+    border: black solid 4px;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    font-size: 24px;
+    margin: 0 0 5px 0px;
+
+}
+
+#insert-btn{
+    background-color: #FB9000 ;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 24px;
+    color: black;
+    text-transform: uppercase;
+
+    border: none;
+    letter-spacing: 0.5px;
+}
+
+#insert-btn:hover {
+    background-color: black;
+    color: #FB9000; 
+}
+
+.btn, .btn2 {
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007DCC;
+    color: #E7E7E7;
+    margin: 3px;
+}
+
+.btn2 {
+    background-color: #D10056;
+    color: #E7E7E7;
+}
+
+.text-inputs {
+    margin: 0 auto;
+    word-wrap: break-word;
+
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    text-align: center;
+}
+
+.text-inputs li{
+    text-align: center;
+    padding: 5px;
+    list-style-type: none;
+
+    flex-grow: 1;
+    border-radius: 8px;
+    text-align: center;
+
+    font-weight: bold;
+
+    background-color: #D10056;
+    border: 2px solid #E7E7E7; 
+    color: black;
+
+    font-size: 24px;
+    color: #E7E7E7;
+    overflow: auto;
+
+}
+
+.inputs-div {
+    margin: 0 auto 40px;
+    width: 80%;
+}
