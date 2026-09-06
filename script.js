@@ -1,167 +1,3 @@
-// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-// import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
-
-// const appSettings = {
-//     databaseURL: "https://playground-888e0-default-rtdb.europe-west1.firebasedatabase.app/"
-// }
-
-// const app = initializeApp(appSettings);
-// const database = getDatabase(app);
-// const rebMikeListDB = ref(database, "RebMike");
-// let lastTap = 0;
-
-
-// // DOM Elements
-// let itemList = document.getElementById("items-list");
-// const cartButton = document.getElementById("insert-btn");
-// const inputBar = document.getElementById("input-box");
-
-// function createFloatingHearts(note) {
-
-//     for (let i = 0; i < 5; i++) {
-
-//         const heart = document.createElement("span");
-
-//         heart.classList.add("floating-heart");
-//         heart.textContent = "❤️";
-
-//         // Random horizontal starting position
-//         heart.style.left = `${20 + Math.random() * 60}%`;
-
-//         // Random horizontal movement
-//         const randomX = (Math.random() * 100 - 50) + "px";
-//         heart.style.setProperty("--heart-x", randomX);
-
-//         // Random rotation
-//         const rotation = (Math.random() * 60 - 30) + "deg";
-//         heart.style.setProperty("--heart-rotation", rotation);
-
-//         // Slightly different sizes
-//         heart.style.fontSize = `${14 + Math.random() * 10}px`;
-
-//         // Stagger the hearts
-//         heart.style.animationDelay = `${i * 150}ms`;
-
-//         note.appendChild(heart);
-
-//         // Remove heart after animation
-//         setTimeout(() => {
-//             heart.remove();
-//         }, 3000);
-//     }
-// }
-
-// onValue(rebMikeListDB, function(snapshot) {
-
-//     itemList.innerHTML = "";
-
-//     if (snapshot.exists()) {
-
-//         let dbItemsArray = Object.entries(snapshot.val());
-
-//         for (let i = 0; i < dbItemsArray.length; i++) {
-
-//             let dbItemKey = dbItemsArray[i][0];
-//             let dbItemValue = dbItemsArray[i][1];
-
-//             let newListItem = document.createElement("li");
-
-//             if (dbItemValue.substr(-4) === "ukuk") {
-//                 newListItem.textContent = `${dbItemValue.slice(0, -4)}`;
-//                 newListItem.id = "mike";
-//             } else {
-//                 newListItem.textContent = dbItemValue;
-//             }
-
-//             itemList.append(newListItem);
-
-//             // newListItem.addEventListener("dblclick", function() {
-
-//             //     let exactLocationOfItemInDB = ref(
-//             //         database,
-//             //         `RebMike/${dbItemKey}`
-//             //     );
-
-//             //     remove(exactLocationOfItemInDB);
-//             // });
-
-
-//             newListItem.addEventListener("click", function(e) {
-//                 const now = new Date().getTime();
-//                 const timespan = now - lastTap;
-
-//                 if (timespan < 300 && timespan > 0) {
-//                     let exactLocationOfItemInDB = ref(
-//                         database,
-//                         `RebMike/${dbItemKey}`
-//                     );
-
-//                     remove(exactLocationOfItemInDB);
-                    
-//                     // Prevents iOS Safari from zooming in on the double-tap
-//                     e.preventDefault(); 
-//                 }
-
-//                 lastTap = now;
-//             });
-            
-//         }
-
-//     } else {
-//         itemList.textContent = "no items in the list yet";
-//     }
-
-// });
-
-
-// let michaelColor = document.getElementById("Michael")
-
-// cartButton.addEventListener("click", function() {
-
-
-//     if (getComputedStyle(michaelColor).color === "rgb(251, 144, 0)") {
-//         let currentInput = `${inputBar.value}ukuk`
-//         push(rebMikeListDB, currentInput)
-//         inputBar.value = "";
-
-//     } else {
-//         let currentInput = `${inputBar.value}`
-//         push(rebMikeListDB, currentInput)
-//         inputBar.value = "";
-//     }
-// })
-
-// michaelColor.addEventListener("dblclick", function() {
-//     michaelColor.style.color = "#FB9000";
-// })
-
-
-// // image project
-
-// let imageRender = document.getElementById("image-to-display");
-
-// let randomNumber = Math.floor(Math.random() * 11 + 1);
-
-
-// setTimeout(() => {
-
-//     const image = imageRender.querySelector(".image");
-
-//     // Fade out
-//     image.style.opacity = "0";
-
-//     // Wait for fade-out to finish
-//     setTimeout(() => {
-
-//         image.src = `images/us/${randomNumber}.jpg`;
-
-//         // Fade back in
-//         image.style.opacity = "1";
-
-//     }, 400);
-
-// }, 2000);
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
 import {
     getDatabase,
@@ -176,13 +12,11 @@ const appSettings = {
     databaseURL: "https://playground-888e0-default-rtdb.europe-west1.firebasedatabase.app/"
 };
 
-
 const app = initializeApp(appSettings);
 const database = getDatabase(app);
 const rebMikeListDB = ref(database, "RebMike");
 
 let lastTap = 0;
-
 
 // DOM Elements
 let itemList = document.getElementById("items-list");
@@ -196,7 +30,7 @@ const inputBar = document.getElementById("input-box");
 
 function createFloatingHearts(note) {
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 50; i++) {
 
         const heart = document.createElement("span");
 
@@ -352,6 +186,8 @@ let michaelColor = document.getElementById("Michael");
 
 cartButton.addEventListener("click", function() {
 
+    event.preventDefault();
+
 
     // Don't add an empty note
     if (inputBar.value.trim() === "") {
@@ -401,12 +237,14 @@ michaelColor.addEventListener("dblclick", function() {
 
 let imageRender = document.getElementById("image-to-display");
 
-let randomNumber = Math.floor(Math.random() * 11 + 1);
+let randomNumber = Math.floor(Math.random() * 49 + 1);
 
 
 setTimeout(() => {
 
     const image = imageRender.querySelector(".image");
+
+    image.id = "border"
 
 
     // Fade out
@@ -417,6 +255,7 @@ setTimeout(() => {
     setTimeout(() => {
 
         image.src = `images/us/${randomNumber}.jpg`;
+        
 
 
         // Fade back in
@@ -424,4 +263,4 @@ setTimeout(() => {
 
     }, 400);
 
-}, 2000);
+}, 3000);

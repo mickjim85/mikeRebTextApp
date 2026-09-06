@@ -20,23 +20,32 @@
         </style>
     </head>
 
-    <body>
-        <div class="card">
+    <body class="card">
         <header>
             <h1>
-                <span class="michael" id="Michael">Michael</span> <span class="and">&</span><br>
-                <span class="rebecca" id="Rebecca">Rebecca</span>
+                <span id="Michael">Michael</span> 
+                <span class="and">&</span><br>
+                <span id="Rebecca">Rebecca</span>
             </h1>
             <p><span class="hearts">&#x2764</span> Our first own App <span class="hearts">&#x2764</span></p>
         </header>
 
         <main>
             <div id="image-to-display">
-                <img class="image border" src="images/MandR.png" alt="picture of Michael and Rebecca"/>
+                <img class="image" src="images/MandR.png" alt="picture of Michael and Rebecca"/>
             </div>
+
             <div class="input-box">
-                <input class="bounce-title" minlength="1" maxlength="70" id="input-box" type="text" placeholder="Write something for us ❤️"/>
-                <button id="insert-btn">＋ Add to our Notes</button>
+                <form>
+                    <label for="fname"></label>
+                    <input 
+                        minlength="1" maxlength="70" 
+                        id="input-box" type="text" 
+                        placeholder="Write something for us ❤️"
+                    >
+                    <input id="insert-btn" type="submit" 
+                        value="+ Add to our Notes">
+                </form>
             </div>
 
             <div class="inputs-div">
@@ -46,14 +55,11 @@
 
         </main>
 
-
-
-        <script src="script.js" type="module"></script>
-        </div>
         <footer>
             <div>Made with ❤️ by Michael</div>
             <div class="footer-sub">For Rebecca — 8 September 2026</div>
         </footer>
 
+        <script src="script.js" type="module"></script>
     </body>
 </html>
