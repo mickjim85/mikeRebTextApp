@@ -1,0 +1,248 @@
+* {
+    font-family: "Caacupe One", "Arial Black", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 0;
+    margin: 0;
+}
+
+/* =========================================
+   LAYOUT
+   ========================================= */
+
+body {
+    text-align: center;
+    margin: 0;
+    background-image: url(images/bckground.png);
+    display: flex;
+    flex-direction: column;
+    min-height: 100svh;
+    min-height: 100dvh;
+    margin: 30px auto 0;
+}
+
+header {
+    margin-bottom: 10px;
+}
+
+main {
+    margin: 0 auto 10px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+    .image {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+
+        box-shadow: 
+            0 4px 0 #cc7200,
+            0 8px 15px rgba(0, 0, 0, 0.25);
+
+        opacity: 1;
+        transition: opacity 0.4s ease;
+
+        margin-bottom: 10px;
+    }
+
+    #border {
+    border: 5px solid #ff9900;
+    outline: 3px solid white;
+    outline-offset: -8px;
+    border-radius: 24px;
+    }
+
+.input-box {
+
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#input-box {
+    padding: 5px;
+    text-align: center;
+    font-size: 24px;
+    border: 4px solid #111;
+    border-radius: 8px;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.15);
+    width: 100%;
+    margin: 0 auto 10px;
+
+    box-sizing: border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing: border-box;
+}
+
+#insert-btn{
+    background-color: #FB9000 ;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 24px;
+    color: black;
+    text-transform: uppercase;
+    border: none;
+    letter-spacing: 0.5px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#insert-btn:hover {
+    background-color: black;
+    color: #FB9000; 
+}
+
+
+.inputs-div {
+    margin: 10px auto;
+    width: 75%;
+}
+
+.text-inputs {
+    margin: 0 auto;
+    word-wrap: break-word;
+    padding: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    text-align: center;
+}
+
+.text-inputs li{
+    text-align: center;
+    padding: 5px;
+    list-style-type: none;
+    flex-grow: 1;
+    border-radius: 8px;
+    font-weight: bold;
+    background-color: #D10056;
+    border: 2px solid #E7E7E7; 
+    font-size: 24px;
+    color: #E7E7E7;
+    overflow: auto;
+    touch-action: manipulation;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.text-inputs li:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+#mike {
+    background-color: #007DCC;
+}
+
+footer {
+    margin-top: auto;
+    align-items: flex-end;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #E7E7E7;
+    padding: 10px 5px;
+    padding-bottom: 
+    calc(10px + env(safe-area-inset-bottom));
+}
+
+
+/* =========================================
+   TEXT
+   ========================================= */
+
+
+h1 {
+    margin: 0;
+    padding: 0;
+    line-height: 50px;
+    font-size: 68px;
+    color: black;
+}
+
+
+.hearts {
+    color: red;
+}
+
+
+#Michael {
+    color: #007DCC;
+    display: inline-block;
+    animation: bounceMichael 2s ease-in-out infinite;
+}
+
+#Rebecca {
+    color: #D10056;
+    display: inline-block;
+    animation: bounceRebecca 2s ease-in-out infinite;
+}
+
+.and {
+    font-size: 0.75em;
+    color: #222;
+}
+
+@keyframes bounceMichael {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+@keyframes bounceRebecca {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(2px);
+    }
+}
+
+.footer-sub {
+    font-size: 14px;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* =========================================
+   FLOATING HEARTS
+   ========================================= */
+
+.floating-heart {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    font-size: 18px;
+    pointer-events: none;
+    z-index: 20;
+    opacity: 0;
+
+    animation: heartFloat 2.5s ease-out forwards;
+}
+
+@keyframes heartFloat {
+
+    0% {
+        opacity: 0;
+        transform: translate(0, 10px) scale(0.5) rotate(0deg);
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translate(var(--heart-x), -80px)
+            scale(1.1)
+            rotate(var(--heart-rotation));
+    }
+}
