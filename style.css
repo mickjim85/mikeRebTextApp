@@ -4,8 +4,9 @@
     maroon: B2054C
 */
 
-*   {
-    font-family: "Caacupe One", sans-serif;
+
+* {
+    font-family: "Caacupe One", "Arial Black", -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 400;
     font-style: normal;
     padding: 0;
@@ -40,11 +41,35 @@ main {
     margin: 0 20px
 }
 
-.image {
+/* .image {
     width: 80%;
-    border: 5px solid #FB9000;
     border-radius: 10%;
-    max-height: 350px;
+    height: 150px;
+    width: 150px;
+} */
+
+.image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+
+    box-shadow: 
+        0 4px 0 #cc7200,
+        0 8px 15px rgba(0, 0, 0, 0.25);
+
+        opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+.hearts {
+    color: red;
+}
+
+.border {
+    border: 5px solid #ff9900;
+    outline: 3px solid white;
+    outline-offset: -8px;
+    border-radius: 24px;
 }
 
 
@@ -78,13 +103,20 @@ h1 {
 }
 
 #input-box {
-    border: black solid 4px;
-    border-radius: 5px;
     padding: 5px;
     text-align: center;
     font-size: 24px;
-    margin: 0 0 5px 0px;
+    margin: 0 0 8px 0px;
 
+    border: 4px solid #111;
+    border-radius: 8px;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.15);
+
+}
+
+.and {
+    font-size: 0.75em;
+    color: #222;
 }
 
 #insert-btn{
@@ -149,9 +181,202 @@ h1 {
     color: #E7E7E7;
     overflow: auto;
 
+    touch-action: manipulation;
+
+     box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.text-inputs li:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 
 .inputs-div {
     margin: 0 auto 40px;
     width: 80%;
+}
+
+#mike {
+    background-color: #007DCC;
+}
+
+#Michael {
+    color: #007DCC;
+}
+
+
+.michael {
+    display: inline-block;
+    animation: bounceMichael 2s ease-in-out infinite;
+}
+
+.rebecca {
+    display: inline-block;
+    animation: bounceRebecca 2s ease-in-out infinite;
+}
+
+@keyframes bounceMichael {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+@keyframes bounceRebecca {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(2px);
+    }
+}
+
+.footer-sub {
+    font-size: 14px;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+
+
+.note {
+    background: white;
+    border: 3px solid #222;
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 12px;
+    font-size: 18px;
+    
+    /* Starting state */
+    opacity: 0;
+    transform: scale(0.7) translateY(20px);
+    
+    /* Animation */
+    animation: notePop 0.5s ease-out forwards;
+}
+
+@keyframes notePop {
+    0% {
+        opacity: 0;
+        transform: scale(0.7) translateY(20px);
+    }
+
+    70% {
+        transform: scale(1.05) translateY(-3px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+
+.floating-heart {
+    position: fixed;
+    pointer-events: none;
+    font-size: 25px;
+    animation: floatHeart 1.2s ease-out forwards;
+}
+
+@keyframes floatHeart {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-100px) scale(1.5);
+    }
+}
+
+/* Allows the hearts to float outside the note */
+.text-inputs li {
+    position: relative;
+    overflow: visible;
+}
+
+/* Individual floating hearts */
+.floating-heart {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    font-size: 18px;
+    pointer-events: none;
+    z-index: 20;
+    opacity: 0;
+
+    animation: heartFloat 2.5s ease-out forwards;
+}
+
+@keyframes heartFloat {
+    0% {
+        opacity: 0;
+        transform: translate(0, 10px) scale(0.5) rotate(0deg);
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translate(var(--heart-x), -80px)
+            scale(1.1)
+            rotate(var(--heart-rotation));
+    }
+}
+
+/* =========================================
+   FLOATING HEARTS
+   ========================================= */
+
+.text-inputs li {
+    position: relative;
+    overflow: visible;
+}
+
+.floating-heart {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    font-size: 18px;
+    pointer-events: none;
+    z-index: 20;
+    opacity: 0;
+
+    animation: heartFloat 2.5s ease-out forwards;
+}
+
+@keyframes heartFloat {
+
+    0% {
+        opacity: 0;
+        transform: translate(0, 10px) scale(0.5) rotate(0deg);
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform:
+            translate(var(--heart-x), -80px)
+            scale(1.1)
+            rotate(var(--heart-rotation));
+    }
 }
