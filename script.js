@@ -199,7 +199,7 @@ cartButton.addEventListener("click", function() {
     // MICHAEL / REBECCA NOTE COLOUR
     // ==================================================
 
-    if (getComputedStyle(michaelColor).color === "rgb(251, 144, 0)") {
+    if (getComputedStyle(michaelColor).color === "rgb(255, 192, 203)") {
 
         let currentInput = `${inputBar.value}ukuk`;
 
@@ -226,7 +226,7 @@ cartButton.addEventListener("click", function() {
 
 michaelColor.addEventListener("dblclick", function() {
 
-    michaelColor.style.color = "#FB9000";
+    michaelColor.style.color = "#FFC0CB";
 
 });
 

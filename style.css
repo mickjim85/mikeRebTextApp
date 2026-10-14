@@ -13,7 +13,7 @@
 body {
     text-align: center;
     margin: 0;
-    background-image: url(images/bckground.png);
+    background-image: url(images/halloween1.png);
     display: flex;
     flex-direction: column;
     min-height: 100svh;
@@ -32,12 +32,12 @@ main {
     width: 80%;
 }
     .image {
-        width: 150px;
-        height: 150px;
+        width: 80%;
+        height: 80%;
         object-fit: cover;
 
         box-shadow: 
-            0 4px 0 #cc7200,
+            0 4px 0 black,
             0 8px 15px rgba(0, 0, 0, 0.25);
 
         opacity: 1;
@@ -47,10 +47,10 @@ main {
     }
 
     #border {
-    border: 5px solid #ff9900;
+    border: 5px solid black;
     outline: 3px solid white;
     outline-offset: -8px;
-    border-radius: 24px;
+    border-radius: 2px;
     }
 
 .input-box {
@@ -116,15 +116,17 @@ main {
     padding: 5px;
     list-style-type: none;
     flex-grow: 1;
-    border-radius: 8px;
+    border-radius: 1px;
     font-weight: bold;
-    background-color: #D10056;
-    border: 2px solid #E7E7E7; 
+    background-color: #c900ff;
+    border: 2px solid black; 
     font-size: 24px;
-    color: #E7E7E7;
+    color: #000000;
     overflow: auto;
     touch-action: manipulation;
     box-shadow: 0 3px 0 rgba(0, 0, 0, 0.2);
+    transform: skewX(-10deg);
+    text-shadow:1px 1px 10px #ccc, 1px 1px 10px #ccc;
 }
 
 .text-inputs li:active {
@@ -133,7 +135,9 @@ main {
 }
 
 #mike {
-    background-color: #007DCC;
+    background-color: #ff9a00;
+    color: whitesmoke;
+    text-shadow:1px 1px 10px black, 1px 1px 10px black;
 }
 
 footer {
@@ -157,30 +161,39 @@ h1 {
     padding: 0;
     line-height: 50px;
     font-size: 68px;
-    color: black;
+    color: grey;
 }
 
+p {
+    color: white;
+    font-size: 16px;
+    text-shadow:1px 1px 10px black, 1px 1px 10px black;
+}
 
 .hearts {
-    color: red;
+    color: purple;
 }
 
 
 #Michael {
-    color: #007DCC;
+    color: #ff9a00;
     display: inline-block;
     animation: bounceMichael 2s ease-in-out infinite;
+        text-shadow: 5px 5px 5px #301934;
+    -webkit-text-stroke: 2px #301934;
 }
 
 #Rebecca {
-    color: #D10056;
+    color:  #c900ff;
     display: inline-block;
     animation: bounceRebecca 2s ease-in-out infinite;
+    text-shadow: 5px 5px 5px #88E032;
+    -webkit-text-stroke: 2px black;
 }
 
 .and {
     font-size: 0.75em;
-    color: #222;
+    color: darkslategrey;
 }
 
 @keyframes bounceMichael {
@@ -205,6 +218,10 @@ h1 {
     font-size: 14px;
     font-style: italic;
     opacity: 0.9;
+}
+
+input::placeholder {
+    font-size: 18px;
 }
 
 /* =========================================
